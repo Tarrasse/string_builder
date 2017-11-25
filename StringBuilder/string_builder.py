@@ -45,7 +45,7 @@ class StringBuilder:
         :param start: starting index
         :param end: ending indes
         """
-        if end < start:
+        if (end != None) and (start != None) and (end < start):
             raise RuntimeError("end must be bigger than or equal start")
 
         if start is not None:
@@ -74,7 +74,7 @@ class StringBuilder:
         :type index: int
         """
 
-        if index > self.length -1 or index < 0:
+        if index > self.length - 1 or index < 0:
             raise RuntimeError("index must be (0 <= index <= length-1)")
         idx = 0
         for i in range(len(self.subs)):
@@ -93,7 +93,7 @@ class StringBuilder:
 
        :type index: int
        """
-        if index > self.length -1 or index < 0:
+        if index > self.length - 1 or index < 0:
             raise RuntimeError("index must be (0 <= index <= length-1)")
 
         idx = 0
@@ -146,7 +146,7 @@ class StringBuilder:
         delete character at index
         :param index: index of character to be deleted
         """
-        if index > self.length -1 or index < 0:
+        if index > self.length - 1 or index < 0:
             raise RuntimeError("index must be (0 <= index <= length-1)")
 
         idx = 0
@@ -186,12 +186,13 @@ class StringBuilder:
         :param start: starting index
         :param end: stopping index
         """
-        if end < start:
-            raise RuntimeError("end must be bigger than or equal start")
-        if start > self.length - 1 or start < 0:
-            raise RuntimeError("start must be (0 <= index <= length-1)")
-        if end > self.length - 1 or end < 0:
-            raise RuntimeError("end must be (0 <= index <= length-1)")
+        if (end != None)  and (start != None):
+            if end < start:
+                raise RuntimeError("end must be bigger than or equal start")
+            if start > self.length - 1 or start < 0:
+                raise RuntimeError("start must be (0 <= index <= length-1)")
+            if end > self.length - 1 or end < 0:
+                raise RuntimeError("end must be (0 <= index <= length-1)")
 
         index = 0
         for i_subs in range(len(self.subs)):

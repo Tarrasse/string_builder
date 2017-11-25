@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='StringBuilder',
-      version='1.0.0a0',
+      version='1.0.0a1',
       description='library for efficient string building',
       url='https://github.com/Tarrasse/string_builder',
       author='Mahmoud El-Tarrasse',
