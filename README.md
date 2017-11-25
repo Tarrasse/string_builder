@@ -12,7 +12,7 @@ you can install this repo py pip
 **Introduction**
 
 python have a small issue when it comes 
-to string to string concatenation, this library aims to solve this problem 
+to string concatenation, this library aims to solve this problem 
 
 **The problem**
 
