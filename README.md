@@ -3,6 +3,12 @@
 A small python library for efficient string building and concatenation   
 
 
+**Installation**
+you can install this repo py pip
+
+    pip install StringBuilder
+
+
 **Introduction**
 
 python have a small issue when it comes 
@@ -45,5 +51,6 @@ to get the final string
 
  
 
+pull requests are welcomed 
 
-
+this is an alpha version (under testing)

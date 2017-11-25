@@ -1,10 +1,11 @@
 from setuptools import setup
 
 setup(name='StringBuilder',
-      version='1.0.0',
+      version='1.0.0a0',
       description='library for efficient string building',
-      url='',
+      url='https://github.com/Tarrasse/string_builder',
       author='Mahmoud El-Tarrasse',
       author_email='Mahmoudtarrasse@gmail.com',
       license='MIT',
+      keywords=['python', 'string', 'appending', 'building'],
       packages=['StringBuilder'])
