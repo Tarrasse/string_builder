@@ -36,7 +36,7 @@ then append the sub_strings you want
 
     sb.append(sub_string)
 
-you can replace or parts from the string
+you can replace or delete parts from the string
 		
 
     sb.replace (new, old)
