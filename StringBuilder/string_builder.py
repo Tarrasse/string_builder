@@ -25,7 +25,7 @@ class StringBuilder:
             return False
         self.subs.append(str(sub))
         self.length += length
-        return True
+        return self
 
     def delete(self, start=None, end=None):
         """
@@ -52,22 +52,23 @@ class StringBuilder:
             if end is not None:
                 # start = #, end = #
                 # delete items within the range
-                self.delete_subset(start, end)
+                self._delete_subset(start, end)
             else:
                 # start = #, end = None
                 # delete items after the start index
-                self.delete_all_after(start)
+                self._delete_all_after(start)
         else:
             if end is not None:
                 # start = None, end = #
                 # delete items before the end index
-                self.delete_all_before(end)
+                self._delete_all_before(end)
             else:
                 # delete all
                 self.subs = []
                 self.length = 0
+        return self
 
-    def delete_all_before(self, index):
+    def _delete_all_before(self, index):
         """
         delete all the characters before the index
 
@@ -87,7 +88,7 @@ class StringBuilder:
             idx += len(sub)
         self.length -= index
 
-    def delete_all_after(self, index):
+    def _delete_all_after(self, index):
         """
        delete all the characters after the index
 
@@ -107,7 +108,7 @@ class StringBuilder:
             idx += len(sub)
         self.length -= (self.length - index - 1)
 
-    def delete_subset(self, start, end):
+    def _delete_subset(self, start, end):
         """
         delete substring starting from start and ends before end
         :param start: starting index
@@ -140,6 +141,7 @@ class StringBuilder:
                     self.subs[i] = sub[:(start - idx)]
 
             idx += sub_length
+        # TODO: Update Length
 
     def delete_char_at(self, index):
         """
@@ -159,6 +161,7 @@ class StringBuilder:
                     self.subs[i] = sub[:char_index] + sub[char_index:]
             idx += len(sub)
         self.length -= 1
+        return self
 
     def build(self):
         """
@@ -202,3 +205,5 @@ class StringBuilder:
                         and (end is None or end > index) \
                         and sub[i_sub] == old:
                     self.subs[i_subs] = sub[:i_sub] + new + sub[i_sub + 1:]
+        # TODO: Update Length.
+        return self
